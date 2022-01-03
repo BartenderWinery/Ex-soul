@@ -35,7 +35,7 @@ async def log(message):
     if auth.get("archive_channel"):
         archive = client.get_channel(int(auth.get("archive_channel")))
         await archive.send("Deleted message by: "+message.author.name+"; ||"+message.content+"||; Time of deletion: "+current_time); emoji("broken heart")
-        print("Deleted message by: "+message.author.name+"; "+message.content+"; Time of deletion: "+current_time)
+        print("DEL; Offender: "+message.author.name+"; Content: "+message.content+"; Time of deletion: "+current_time)
 @client.event
 async def on_message(message):
     if message.author == client.user:
