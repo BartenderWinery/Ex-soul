@@ -32,8 +32,8 @@ def emoji(requested):
         case "broken heart":
             return "\N{BROKEN HEART}"
 async def log(message):
-    if(auth["archive_channel"]):
-        archive = client.get_channel(auth["archive_channel"])
+    if auth.get("archive_channel"):
+        archive = client.get_channel(int(auth.get("archive_channel")))
         await archive.send("Deleted message by: "+message.author.name+"; ||"+message.content+"||; Time of deletion: "+current_time); emoji("broken heart")
         print("Deleted message by: "+message.author.name+"; "+message.content+"; Time of deletion: "+current_time)
 @client.event
